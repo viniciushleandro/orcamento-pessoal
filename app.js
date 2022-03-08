@@ -243,6 +243,7 @@ function somenteNumeros(num) {
     let digitos = /[^0-9.]/;
     digitos.lastIndex = 0;
     let campo = num;
+    //Se variável campo receber letras, limpa o campo 
     if (digitos.test(campo.value)) {
       campo.value = "";
     }
