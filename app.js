@@ -216,13 +216,10 @@ function carregaListaDespesas(despesas = Array(), filtro = false) {
             let id = this.id.replace('id_despesa_', '')
 
             bd.remover(id)
-
+                  
             window.location.reload()
         }
         linha.insertCell(4).append(btn)
-
-        console.log(d)
-
     })
 }
 
@@ -240,4 +237,13 @@ function pesquisarDespesa() {
 
     carregaListaDespesas(despesas, true)
     
+}
+
+function somenteNumeros(num) {
+    let digitos = /[^0-9.]/;
+    digitos.lastIndex = 0;
+    let campo = num;
+    if (digitos.test(campo.value)) {
+      campo.value = "";
+    }
 }
